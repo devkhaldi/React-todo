@@ -7,7 +7,10 @@ const cors = require('cors')
 // Enable cors for all routes
 app.use(cors())
 // connect
-mongoose.connect(process.env.MONOGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose
+  .connect(process.env.MONOGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to mongoDB'))
+  .catch(err => console.log(err))
 mongoose.Promise = global.Promise
 
 app.use(express.json())

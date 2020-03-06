@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Todo = () => {
-  return <div>todo</div>
+const Todo = ({ todo }) => {
+  return <div>{todo.title}</div>
 }
 
 export default Todo
